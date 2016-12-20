@@ -9,4 +9,9 @@ function fn(a) {
   };
 }
 
-fn(1)(2)(3);
+let f1 = fn(1);
+
+let f2 = f1(2);
+
+let res = f2(3);
+
