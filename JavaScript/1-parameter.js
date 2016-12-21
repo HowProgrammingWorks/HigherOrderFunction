@@ -5,6 +5,6 @@ function fn(callback) {
   return 'Value';
 }
 
-fn((err, data) => {
+fn(function(err, data) {
   console.dir({ data });
 });
