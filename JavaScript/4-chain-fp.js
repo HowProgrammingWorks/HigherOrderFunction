@@ -1,6 +1,6 @@
 'use strict';
 
-let fn = a => b => c => a + b + c;
+const fn = a => b => c => a + b + c;
 
-let res = fn(1)(2)(3);
+const res = fn(1)(2)(3);
 console.log('a + b + c = ' + res);

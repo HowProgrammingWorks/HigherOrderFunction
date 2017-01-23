@@ -2,7 +2,7 @@
 
 function fn() {
   console.log('Generate cache');
-  let cache = {};
+  const cache = {};
   return function(a) {
     let res = cache[a];
     if (res) {
@@ -17,8 +17,8 @@ function fn() {
   };
 }
 
-let f1 = fn();
-let f2 = fn();
+const f1 = fn();
+const f2 = fn();
 f1(1);
 f1(2);
 f1(1);
