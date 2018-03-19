@@ -1,11 +1,11 @@
 'use strict';
 
-function fn(a) {
+const fn = a => {
   const b = 'Closure variable';
-  return function(c) {
+  return c =>  {
     console.dir({ a, b, c });
   };
-}
+};
 
 const f1 = fn('Parameter 1');
 f1('Parameter 2');

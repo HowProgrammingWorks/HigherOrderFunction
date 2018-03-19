@@ -11,4 +11,5 @@ function fn(a) {
 const f1 = fn(1);
 const f2 = f1(2);
 const res = f2(3);
+
 console.log('a + b + c = ' + res);
