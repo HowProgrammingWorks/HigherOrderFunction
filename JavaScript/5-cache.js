@@ -1,9 +1,9 @@
 'use strict';
 
-function fn() {
+const fn = () => {
   console.log('Generate cache');
   const cache = {};
-  return function(a) {
+  return a => {
     let res = cache[a];
     if (res) {
       console.log('From cache');
@@ -15,7 +15,7 @@ function fn() {
       return res;
     }
   };
-}
+};
 
 const f1 = fn();
 const f2 = fn();
