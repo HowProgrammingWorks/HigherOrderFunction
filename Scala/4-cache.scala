@@ -1,6 +1,5 @@
 object Cache {
 
-//  acts like functor
   def cached() = {
     println("Generate cache")
     var cache: Int Map String = Map.empty[Int, String]
