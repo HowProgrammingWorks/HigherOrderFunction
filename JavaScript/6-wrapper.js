@@ -8,7 +8,10 @@ const logable = fn => (...args) => {
 
 // Usage
 
-const sum = (a, b) => (a + b);
+const sum = (a, b) => a + b;
 
-const wrapped = logable(sum);
-console.log(wrapped(3, 5));
+const logableSum = logable(sum);
+const a = logableSum(3, 5);
+const b = logableSum(7, 2);
+const c = logableSum(1, -1);
+console.dir({ a, b, c });

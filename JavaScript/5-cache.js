@@ -3,15 +3,15 @@
 const fn = () => {
   console.log('Generate cache');
   const cache = {};
-  return a => {
-    let res = cache[a];
+  return key => {
+    let res = cache[key];
     if (res) {
       console.log('From cache');
       return res;
     } else {
       console.log('Calculate and save to cache');
-      res = 'value' + a;
-      cache[a] = res;
+      res = 'value' + key;
+      cache[key] = res;
       return res;
     }
   };
