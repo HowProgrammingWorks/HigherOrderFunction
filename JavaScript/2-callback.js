@@ -5,7 +5,7 @@ const fn = (par, callback) => {
     callback(new Error('Parameter needed'));
     return;
   }
-  callback(null, 'Data ' + par);
+  callback(null, `Data ${par}`);
   return 'Value';
 };
 
