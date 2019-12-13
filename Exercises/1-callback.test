@@ -1,0 +1,23 @@
+({
+  name: 'iterate',
+  length: [120, 180],
+  test: iterate => {
+    {
+      const obj = { a: 1, b: 2, c: 3 };
+      const obj2 = {};
+      iterate(obj, (key, value, object) => {
+        obj2[key] = value;
+        if (object !== obj) {
+          const msg = `Expected iterating object as a 3rd argument of callback`;
+          throw new Error(msg);
+        }
+      });
+      const initial = JSON.stringify(obj);
+      const cloned = JSON.stringify(obj2);
+      if (initial !== cloned) {
+        const msg = `Result ${cloned} instead of expected ${initial}`;
+        throw new Error(msg);
+      }
+    }
+  }
+})

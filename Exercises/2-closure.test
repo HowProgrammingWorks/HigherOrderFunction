@@ -1,0 +1,32 @@
+({
+  name: 'store',
+  length: [10, 15],
+  test: store => {
+    {
+      const expected = 5;
+      const read = store(expected);
+      if (typeof read !== 'function') {
+        const msg = `Function store() result expected to be function`;
+        throw new Error(msg);
+      }
+      const value = read();
+      if (typeof value !== 'number') {
+        const msg = `Result store(${expected})() expected to be number`;
+        throw new Error(msg);
+      }
+      if (value !== expected) {
+        const msg = `Result ${value} instead of expected ${expected}`;
+        throw new Error(msg);
+      }
+    }
+    {
+      const expected = 7;
+      const read = store(expected);
+      const value = read();
+      if (value !== expected) {
+        const msg = `Result ${value} instead of expected ${expected}`;
+        throw new Error(msg);
+      }
+    }
+  }
+})
