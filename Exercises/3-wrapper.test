@@ -1,0 +1,40 @@
+({
+  name: 'contract',
+  length: [300, 600],
+  test: contract => {
+    {
+      const f = (a, b) => a + b;
+      const g = contract(f, Number, Number, Number);
+      const res = g(2, 3);
+      if (res !== 5) {
+        throw new Error(`Result expected: 5:Number`);
+      }
+    }
+    {
+      const f = (a, b) => a + b + '';
+      const g = contract(f, Number, Number, Number);
+      let error;
+      try {
+        const res = g(2, 3);
+      } catch (err) {
+        error = err;
+      }
+      if (!error) {
+        throw new Error(`TypeError expected, checking result`);
+      }
+    }
+    {
+      const f = (a, b) => a + b;
+      const g = contract(f, Number, Number, Number);
+      let error;
+      try {
+        const res = g(2, '3');
+      } catch (err) {
+        error = err;
+      }
+      if (!error) {
+        throw new Error(`TypeError expected, checking arguments`);
+      }
+    }
+  }
+})
