@@ -17,6 +17,3 @@ const contract = (fn, ...types) => (...arr) => {
 };
 
 module.exports = { contract };
-
-
-
