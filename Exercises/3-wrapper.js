@@ -1,7 +1,7 @@
 'use strict';
 
-const contract = (cb, ...types) => (...args) => {
-  args.forEach((arg, idx) => {
+const contract = (fn, ...types) => (...args) => {
+  for (const [arg, idx] of args) {
     const declaredType = typeof types[idx]();
     const actualType = typeof arg;
 
@@ -9,8 +9,8 @@ const contract = (cb, ...types) => (...args) => {
       throw TypeError(`type '${actualType}' 
             do not match with type '${declaredType}'`);
     }
-  });
-  const result = cb(...args);
+  }
+  const result = fn(...args);
   const resultType = typeof result;
   const declaredResultType = typeof types[types.length - 1]();
 

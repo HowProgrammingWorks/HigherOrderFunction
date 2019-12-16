@@ -1,9 +1,9 @@
 'use strict';
 
 const iterate = (obj, cb) => {
-  Object.keys(obj).forEach(key => {
-    cb(key, obj[key], obj);
-  });
+  for (const [key, value] in obj) {
+    cb(key, value, obj);
+  }
 };
 
 module.exports = { iterate };
