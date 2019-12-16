@@ -1,13 +1,13 @@
 'use strict';
 
 const contract = (fn, ...types) => (...args) => {
-  let i = 0;
-  for (const val of args) {
-    const Type = types[i++];
+  for (const i in args) {
+    const Type = types[i];
     const temp = new Type();
     const type = typeof temp.valueOf();
-    if (typeof val !== type) {
-      throw new TypeError(`Неверный тип аргумента ${val}`);
+    const arg = args[i];
+    if (typeof arg !== type) {
+      throw new TypeError(`Неверный тип аргумента ${arg}`);
     }
   }
   const res = fn(...args);
