@@ -1,16 +1,10 @@
 'use strict';
 
 const iterate = (object, callback) => {
-  for (let key in object){
-    if(object.hasOwnProperty(key))
-      callback(key, object[key]);
+  for (const key in object) {
+    if (Object.prototype.hasOwnProperty.call(object, key))
+      callback(key, object[key], object);
   }
-//  for (let [key, value] of Object.entries(object) ) {
-//    callback(key, value);
-//  }
-//  Object.entries(object).forEach(([key, value])=>{
-//    callback(key, value);
-//})
-}
+};
 
 module.exports = { iterate };
