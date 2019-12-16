@@ -11,10 +11,9 @@ const contract = (fn, ...types) => (...arr) => {
   const neededReType = types[types.length - 1].name.toLowerCase();
   const result = fn(...arr);
   if (typeof result !== neededReType) {
-      throw new TypeError('Types are different');
-    }
+    throw new TypeError('Types are different');
+  }
   return result;
 };
 
 module.exports = { contract };
-
