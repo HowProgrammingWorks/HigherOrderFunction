@@ -1,8 +1,8 @@
 'use strict';
 
 const iterate = (obj, callback) => {
-  //becuse of eslint say that it too short...maybe I do wrong
-  for (const key in obj) {
+  const keys = Object.keys(obj);
+  for (const key of keys) {
     callback(key, obj[key], obj);
   }
 };
