@@ -1,17 +1,15 @@
 'use strict';
 
-const contract = (fn, ...types) => {
-  const nFn = (...args) => {
-    const resTyp = typeof(types.pop())();
-    const argTyp = types.map(x => typeof x());
-    Object.keys(args).forEach(i => {
-      if (typeof args[i] !== argTyp[i]) throw new Error('Wrong args type');
-    });
-    const res = fn(...args);
-    if (typeof res !== resTyp) throw new Error('Wrong res type');
-    return res;
-  };
-  return nFn;
+const contract = (fn, ...types) => (...args) => {
+  const resTyp = types.pop();
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] !== types[i](args[i])) {
+      throw new Error('Wrong arguments type');
+    }
+  }
+  const res = fn(...args);
+  if (res !== resTyp(res)) throw new Error('Wrong result type');
+  return res;
 };
 
 module.exports = { contract };
