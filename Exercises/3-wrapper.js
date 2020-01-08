@@ -1,8 +1,8 @@
 'use strict';
 
 const contract = (fn, ...types) => (...args) => {
-  const resTyp = types.pop();
-  for (let i = 0; i < args.length; i++) {
+  const resTyp = types[types.length - 1];
+  for (let i = 0; i < args.length - 1; i++) {
     if (args[i] !== types[i](args[i])) {
       throw new Error('Wrong arguments type');
     }
