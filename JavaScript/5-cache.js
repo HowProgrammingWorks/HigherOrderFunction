@@ -7,13 +7,12 @@ const fn = () => {
     let res = cache[key];
     if (res) {
       console.log('From cache');
-      return res;
     } else {
       console.log('Calculate and save to cache');
       res = 'value' + key;
       cache[key] = res;
-      return res;
     }
+    return res;
   };
 };
 
