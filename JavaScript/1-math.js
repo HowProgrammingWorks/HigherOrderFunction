@@ -1,7 +1,6 @@
 'use strict';
 
-const { sin } = Math;
-const π = Math.PI;
+const { sin, PI: π } = Math;
 
 const inverse = f => x => 1 / f(x);
 
