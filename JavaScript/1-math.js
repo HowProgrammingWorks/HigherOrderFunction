@@ -3,7 +3,7 @@
 const { sin } = Math;
 const π = Math.PI;
 
-const inverse = f => x => 1 / f(x);
+const inverse = (f) => (x) => 1 / f(x);
 
 const cosecant = inverse(sin);
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const logable = fn => (...args) => {
+const logable = (fn) => (...args) => {
   const res = fn(...args);
   console.log(`Call: ${fn.name}(${args.join(', ')}) Result: ${res}`);
   return res;

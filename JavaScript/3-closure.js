@@ -1,8 +1,8 @@
 'use strict';
 
-const fn = a => {
+const fn = (a) => {
   const b = 'Closure variable';
-  return c =>  {
+  return (c) =>  {
     console.dir({ a, b, c });
   };
 };

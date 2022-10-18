@@ -3,7 +3,7 @@
 const fn = () => {
   console.log('Generate cache');
   const cache = {};
-  return key => {
+  return (key) => {
     let res = cache[key];
     if (res) {
       console.log('From cache');
