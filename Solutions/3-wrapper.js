@@ -10,7 +10,7 @@ const contract = (fn, ...types) => (...args) => {
     }
   }
   const res = fn(...args);
-  const def = types[args.length - 1];
+  const def = types[types.length - 1];
   const name = def.name.toLowerCase();
   if (typeof res !== name) {
     throw new TypeError(`Result type ${name} expected`);
