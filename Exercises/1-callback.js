@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const iterate = (obj, callback) => {
     for (const key in obj) {
