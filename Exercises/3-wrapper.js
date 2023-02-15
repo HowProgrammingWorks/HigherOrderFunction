@@ -14,7 +14,7 @@ const contract =
                 throw new TypeError(`Expected ${argTypes[index]}`);
             }
         }
-        return fn(...args);
+        return result;
     };
 
 module.exports = { contract };
