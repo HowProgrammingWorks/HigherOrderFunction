@@ -3,7 +3,7 @@
 const fn = (par, callback) => {
   if (!par) {
     callback(new Error('Parameter needed'));
-    return;
+    return 'None';
   }
   callback(null, `Data ${par}`);
   return 'Value';
