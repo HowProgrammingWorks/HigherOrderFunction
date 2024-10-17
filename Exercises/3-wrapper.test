@@ -1,7 +1,7 @@
 ({
   name: 'contract',
   length: [300, 600],
-  test: contract => {
+  test: (contract) => {
     {
       const f = (a, b) => a + b;
       const g = contract(f, Number, Number, Number);

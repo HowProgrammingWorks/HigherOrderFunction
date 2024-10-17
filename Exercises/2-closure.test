@@ -1,7 +1,7 @@
 ({
   name: 'store',
   length: [10, 15],
-  test: store => {
+  test: (store) => {
     {
       const expected = 5;
       const read = store(expected);

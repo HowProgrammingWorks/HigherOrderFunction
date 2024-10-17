@@ -1,7 +1,7 @@
 ({
   name: 'iterate',
   length: [120, 180],
-  test: iterate => {
+  test: (iterate) => {
     {
       const obj = { a: 1, b: 2, c: 3 };
       const obj2 = {};
