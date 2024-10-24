@@ -2,7 +2,9 @@
 
 const logable = (fn) => (...args) => {
   const res = fn(...args);
-  console.log(`Call: ${fn.name}(${args.join(', ')}) Result: ${res}`);
+  const callArgs = args.join(', ');
+  const callLog = `${fn.name}(${callArgs})`;
+  console.log(`Call: ${callLog} Result: ${res}`);
   return res;
 };
 
