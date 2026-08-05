@@ -10,7 +10,7 @@ const fn = () => {
       return res;
     }
     console.log('Calculate and save to cache');
-    res = 'value' + key;
+    res = `value${key}`;
     cache[key] = res;
     return res;
   };
